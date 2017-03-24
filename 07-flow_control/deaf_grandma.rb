@@ -1,9 +1,19 @@
 def deaf_grandma
+  puts "Grandma: What do you say Sonny?"
 
-  what_you_said_to_grandma = gets.chomp
-  puts "HUH!  SPEAK  UP,  SONNY!"
-  year = rand(1930..1950)
-  puts "NO, NOT SINCE #{year}!"
+  while true
+    what_you_said_to_grandma = gets.chomp
 
-  #write the logic of the method
+    if what_you_said_to_grandma.upcase != what_you_said_to_grandma
+      puts "HUH!  SPEAK  UP,  SONNY!"
+      puts "BYE, SONNY!"
+    elsif what_you_said_to_grandma == 'BYE'
+      break
+    else
+      year = rand(1930..1950)
+      puts "NO, NOT SINCE #{year}!"
+    end
+  end
 end
+
+p deaf_grandma
